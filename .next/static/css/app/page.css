@@ -1,0 +1,141 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/LogoPlaceholder.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+/* 6:1 horizontal logo placeholder — grey fill, violet border, rounded */
+.LogoPlaceholder_logo__S6xei {
+  width: 100%;
+  aspect-ratio: 6 / 1;
+  background-color: var(--color-grey);
+  border: 2px solid var(--color-violet);
+  border-radius: var(--radius-md); /* 12px, within the locked 8–12px range */
+  /* No text, no symbol, no icon — intentionally empty. */
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/Header.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.Header_header__MvnS2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--color-black) 82%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 14%, transparent);
+}
+
+.Header_inner__ggL_E {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--baseline) * 4);
+  padding-block: calc(var(--baseline) * 2);
+}
+
+.Header_brand__tPzig {
+  display: block;
+  flex: none;
+}
+
+/* Constrain the small logo placeholder inside the header bar */
+.Header_logo__j7oID {
+  width: 168px;
+}
+
+.Header_nav__EE71E {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--baseline) * 4);
+}
+
+.Header_link__qN2Ll {
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--color-grey);
+}
+
+.Header_link__qN2Ll:hover {
+  color: var(--color-violet);
+}
+
+@media (max-width: 640px) {
+  .Header_inner__ggL_E {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Header_nav__EE71E {
+    gap: calc(var(--baseline) * 3);
+  }
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/DeltaDivider.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.DeltaDivider_divider__AVJrF {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--baseline) * 2);
+  color: var(--color-white);
+  transition: color var(--transition-smooth);
+}
+
+.DeltaDivider_divider__AVJrF:hover {
+  color: var(--color-violet);
+}
+
+.DeltaDivider_rule__Uy92V {
+  flex: 1 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.DeltaDivider_delta__iGXCR {
+  flex: none;
+  display: block;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.page_hero__SKW6o {
+  padding-top: calc(var(--baseline) * 14);
+}
+
+.page_heroInner__FQkwa {
+  max-width: 820px;
+}
+
+.page_title__3jonF {
+  margin-top: calc(var(--baseline) * 2);
+}
+
+.page_accent__EQ5_p {
+  color: var(--color-violet);
+}
+
+.page_lede__RDnn4 {
+  font-size: 1.15rem;
+  max-width: 60ch;
+}
+
+.page_actions__e35f9 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--baseline) * 2);
+  margin-bottom: calc(var(--baseline) * 6);
+}
+
+.page_logoWrap__oA5Qv {
+  margin-top: calc(var(--baseline) * 2);
+}
+
+.page_cardTitle__wyNTT {
+  font-size: 1.4rem;
+  margin-bottom: var(--baseline);
+}
+

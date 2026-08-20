@@ -1,0 +1,36 @@
+.hero {
+  padding-top: calc(var(--baseline) * 14);
+}
+
+.heroInner {
+  max-width: 820px;
+}
+
+.title {
+  margin-top: calc(var(--baseline) * 2);
+}
+
+.accent {
+  color: var(--color-violet);
+}
+
+.lede {
+  font-size: 1.15rem;
+  max-width: 60ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--baseline) * 2);
+  margin-bottom: calc(var(--baseline) * 6);
+}
+
+.logoWrap {
+  margin-top: calc(var(--baseline) * 2);
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  margin-bottom: var(--baseline);
+}

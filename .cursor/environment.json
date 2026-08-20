@@ -1,5 +1,5 @@
 {
-  "name": "ddd Notes app",
+  "name": "DPMF Design & Development",
   "install": "npm ci",
   "terminals": [
     {

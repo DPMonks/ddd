@@ -1,0 +1,42 @@
+/* DPMF Design & Development — Brand tokens (locked) */
+:root {
+  /* Colours */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-violet: #9b4dff;
+  --color-grey: #cfcfcf;
+
+  /* Semantic aliases */
+  --bg: var(--color-black);
+  --fg: var(--color-white);
+  --accent: var(--color-violet);
+  --muted: var(--color-grey);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-smooth: 300ms ease;
+
+  /* Typography (font families are provided by next/font as CSS variables:
+     --font-poppins, --font-montserrat, --font-orbitron) */
+  --font-body: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  --font-display: var(--font-orbitron), "Orbitron", system-ui, sans-serif;
+
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Grid system */
+  --grid-columns: 12;
+  --grid-column-width: 80px;
+  --grid-gutter: 24px;
+  --grid-margin: 60px;
+  --baseline: 8px;
+
+  /* Derived max content width: 12*80 + 11*24 = 960 + 264 = 1224px */
+  --content-max: 1224px;
+}

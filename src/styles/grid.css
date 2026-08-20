@@ -1,0 +1,44 @@
+/* DPMF Design & Development — 12-column grid system */
+
+/* Page container: 60px margins, capped to the 12-column content width */
+.container {
+  width: 100%;
+  max-width: calc(var(--content-max) + var(--grid-margin) * 2);
+  margin-inline: auto;
+  padding-inline: var(--grid-margin);
+}
+
+/* 12-column grid with 24px gutters */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gutter);
+}
+
+/* Column span utilities: .col-1 … .col-12 */
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: calc(var(--grid-margin) / 2.5);
+  }
+
+  .grid {
+    gap: calc(var(--grid-gutter) / 1.5);
+  }
+
+  [class*="col-"] {
+    grid-column: span 12;
+  }
+}
