@@ -16,9 +16,10 @@
   --radius-sm: 8px;
   --radius-md: 12px;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-smooth: 300ms ease;
+  /* Transitions — smooth 0.25s ease everywhere (brand rule) */
+  --transition: 0.25s ease;
+  --transition-fast: 0.25s ease;
+  --transition-smooth: 0.25s ease;
 
   /* Typography (font families are provided by next/font as CSS variables:
      --font-poppins, --font-montserrat, --font-orbitron) */
