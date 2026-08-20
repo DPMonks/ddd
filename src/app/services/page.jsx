@@ -121,6 +121,55 @@ const SERVICES = [
       "Analytics dashboards",
     ],
   },
+  {
+    num: "11",
+    title: "Custom Web Applications",
+    want: "Tools, not just websites — bespoke systems that do real work.",
+    includes: ["Dashboards", "Portals", "Internal tools", "Client systems"],
+  },
+  {
+    num: "12",
+    title: "Automation & Workflow Tools",
+    want: "Efficiency through automated, reliable workflows.",
+    includes: [
+      "Automated content flows",
+      "Scheduling systems",
+      "Operational tools",
+    ],
+  },
+  {
+    num: "13",
+    title: "Product Design (Digital)",
+    want: "Full product thinking, from research to prototype.",
+    includes: [
+      "UX research",
+      "Product mapping",
+      "Feature planning",
+      "Prototype development",
+    ],
+  },
+  {
+    num: "14",
+    title: "Visual Systems & Marketing Assets",
+    want: "Cohesive visuals across every touchpoint.",
+    includes: [
+      "Social media assets",
+      "Marketing graphics",
+      "Presentation design",
+      "Visual frameworks",
+    ],
+  },
+  {
+    num: "15",
+    title: "Accessibility & Compliance",
+    want: "Inclusive, compliant experiences by default.",
+    includes: [
+      "WCAG compliance",
+      "Accessible UI",
+      "Keyboard navigation",
+      "Colour contrast systems",
+    ],
+  },
 ];
 
 export default function ServicesPage() {
