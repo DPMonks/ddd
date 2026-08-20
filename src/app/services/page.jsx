@@ -1,36 +1,74 @@
-import Card from "@/components/Card";
+import styles from "./services.module.css";
 
 export const metadata = {
   title: "Services · DPMF Design & Development",
   description:
-    "Web design & development, branding, UI/UX, content, and digital strategy.",
+    "Website design & development, branding & identity, UI/UX, content & documentation, and digital strategy.",
 };
 
 const SERVICES = [
   {
-    eyebrow: "01",
-    title: "Web Design & Development",
-    body: "Marketing sites and web apps, designed and engineered end-to-end on a clean, componentised stack.",
+    num: "01",
+    title: "Website Design & Development",
+    want: "Modern, responsive, fast, and secure websites with clean UI and a professional presence.",
+    includes: [
+      "Landing pages",
+      "Multi-page sites",
+      "Corporate sites",
+      "Portfolio sites",
+      "Product sites",
+      "Marketing sites",
+    ],
   },
   {
-    eyebrow: "02",
-    title: "Branding & Identity",
-    body: "Dark-tech identity systems — logo direction, colour, type, and usage rules that scale.",
+    num: "02",
+    title: "Branding & Identity Systems",
+    want: "A recognisable brand with a professional, consistent identity.",
+    includes: [
+      "Logo design",
+      "Colour palettes",
+      "Typography systems",
+      "Brand guidelines",
+      "Visual identity systems",
+      "Icon sets",
+    ],
   },
   {
-    eyebrow: "03",
+    num: "03",
     title: "UI/UX Design",
-    body: "Interface systems built on an 8px baseline with intentional hierarchy and motion.",
+    want: "Clean interfaces, easy navigation, and a professional user experience.",
+    includes: [
+      "Wireframes",
+      "High-fidelity UI",
+      "Component systems",
+      "User flows",
+      "Interaction design",
+    ],
   },
   {
-    eyebrow: "04",
-    title: "Content & Documentation",
-    body: "Sharp copy and precise product documentation that keep the experience coherent.",
+    num: "04",
+    title: "Content Creation & Structured Documentation",
+    want: "Professional copy, structured documents, and clear communication.",
+    includes: [
+      "Website copywriting",
+      "Service descriptions",
+      "Product documentation",
+      "Reports",
+      "Manuals",
+      "Digital content assets",
+    ],
   },
   {
-    eyebrow: "05",
+    num: "05",
     title: "Digital Strategy & Consultation",
-    body: "Direction on architecture, roadmap, and craft to keep the build engineered and intentional.",
+    want: "Direction on what to build, how to build it, and how to present it.",
+    includes: [
+      "Project planning",
+      "UX strategy",
+      "Brand strategy",
+      "Content strategy",
+      "Digital transformation guidance",
+    ],
   },
 ];
 
@@ -49,13 +87,27 @@ export default function ServicesPage() {
       </section>
 
       <section className="section container">
-        <div className="grid">
+        <div className={styles.list}>
           {SERVICES.map((s) => (
-            <div className="col-4" key={s.title}>
-              <Card eyebrow={s.eyebrow} title={s.title}>
-                <p>{s.body}</p>
-              </Card>
-            </div>
+            <article className={styles.service} key={s.num}>
+              <div className="grid">
+                <div className="col-5">
+                  <p className={`eyebrow ${styles.num}`}>{s.num}</p>
+                  <h2 className={styles.title}>{s.title}</h2>
+                  <p className={styles.want}>{s.want}</p>
+                </div>
+                <div className="col-7">
+                  <p className={styles.includesLabel}>Includes</p>
+                  <ul className={styles.chips}>
+                    {s.includes.map((item) => (
+                      <li className={styles.chip} key={item}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </section>
