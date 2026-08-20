@@ -170,6 +170,61 @@ const SERVICES = [
       "Colour contrast systems",
     ],
   },
+  {
+    num: "16",
+    title: "3D & Motion Graphics",
+    want: "Depth and motion that elevate the brand.",
+    includes: [
+      "3D visuals",
+      "Animated graphics",
+      "Product renders",
+      "Motion loops",
+    ],
+  },
+  {
+    num: "17",
+    title: "Illustration Systems",
+    want: "A cohesive, ownable illustration language.",
+    includes: [
+      "Custom illustrations",
+      "Illustration guidelines",
+      "Spot illustrations",
+      "Scene systems",
+    ],
+  },
+  {
+    num: "18",
+    title: "Iconography Sets",
+    want: "Consistent, thin-line icon families.",
+    includes: [
+      "Custom icon sets",
+      "Line icons",
+      "Icon guidelines",
+      "Scalable SVGs",
+    ],
+  },
+  {
+    num: "19",
+    title: "Design Audits",
+    want: "A clear read on what's working and what isn't.",
+    includes: [
+      "UX audit",
+      "Visual audit",
+      "Accessibility audit",
+      "Recommendations report",
+    ],
+  },
+  {
+    num: "20",
+    title: "Conversion Optimisation",
+    want: "Turning attention into action.",
+    includes: [
+      "A/B testing",
+      "Funnel optimisation",
+      "Landing page CRO",
+      "Conversion tracking",
+    ],
+  },
 ];
 
 export default function ServicesPage() {
