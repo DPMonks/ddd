@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ddd · Notes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Notes</h1>
+        <p class="app__subtitle">A tiny full-stack demo app</p>
+      </header>
+
+      <form id="note-form" class="note-form" autocomplete="off">
+        <input
+          id="note-input"
+          class="note-form__input"
+          type="text"
+          placeholder="Write a note and press Add…"
+          aria-label="Note text"
+        />
+        <button class="note-form__button" type="submit">Add</button>
+      </form>
+
+      <ul id="note-list" class="note-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty-state">No notes yet. Add your first one above.</p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
