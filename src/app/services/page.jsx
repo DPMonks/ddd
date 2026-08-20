@@ -70,6 +70,57 @@ const SERVICES = [
       "Digital transformation guidance",
     ],
   },
+  {
+    num: "06",
+    title: "Design Systems & Component Libraries",
+    want: "Scalable design that stays consistent as the product grows.",
+    includes: [
+      "Component sets",
+      "UI kits",
+      "Token systems",
+      "Grid systems",
+      "Reusable patterns",
+    ],
+  },
+  {
+    num: "07",
+    title: "Motion & Interaction Design",
+    want: "A subtle, premium feel through considered motion.",
+    includes: [
+      "Micro-interactions",
+      "Smooth transitions",
+      "Scroll animations",
+      "Hover states",
+    ],
+  },
+  {
+    num: "08",
+    title: "SEO-Ready Structure & Performance Optimisation",
+    want: "Visibility and speed — built in from the structure up.",
+    includes: [
+      "Clean semantic structure",
+      "Fast load times",
+      "Accessibility improvements",
+      "Core Web Vitals optimisation",
+    ],
+  },
+  {
+    num: "09",
+    title: "Multi-Language Website Architecture",
+    want: "Global reach with clean, maintainable localisation.",
+    includes: ["i18n setup", "Multi-locale routing", "Language switching"],
+  },
+  {
+    num: "10",
+    title: "Analytics & Behaviour Tracking",
+    want: "Insight into how users behave and convert.",
+    includes: [
+      "Heatmaps",
+      "User behaviour tracking",
+      "Conversion funnels",
+      "Analytics dashboards",
+    ],
+  },
 ];
 
 export default function ServicesPage() {
