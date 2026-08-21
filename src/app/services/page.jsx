@@ -1,28 +1,29 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { SITE_NAME, absoluteUrl } from "@/lib/site";
 import styles from "./services.module.css";
 
 export const metadata = {
-  title: "Services — Web, Brand, Product, Content & Growth",
+  title: { absolute: "Digital Design & Development Services | DPMF" },
   description:
-    "Premium digital design & development services: website design, custom web apps, branding & identity, UI/UX and product design, content & strategy, plus SEO, performance, analytics and accessibility.",
+    "Explore 20 digital design & development services — web, branding, UI/UX, product, content, strategy, SEO & performance. Engineered and minimal. Start a project.",
   keywords: [
-    "web design",
-    "web development",
-    "branding",
+    "digital design services",
+    "web design and development",
+    "branding and identity",
     "UI/UX design",
     "product design",
     "design systems",
-    "SEO",
-    "performance optimisation",
+    "SEO and performance",
     "accessibility",
     "conversion optimisation",
     "digital strategy",
   ],
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Services | DPMF Design & Development",
+    title: "Digital Design & Development Services | DPMF",
     description:
-      "Premium, engineered digital design & development services across web, brand, product, content and growth.",
+      "Premium, engineered digital design & development services across web, brand, product, content, strategy and growth.",
     url: "/services",
     type: "website",
   },
@@ -342,32 +343,43 @@ const MOST_POPULAR = ALL_SERVICES.map((s) => ({
 const servicesJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "DPMF Design & Development — Services",
+  name: `${SITE_NAME} — Services`,
   itemListOrder: "https://schema.org/ItemListOrderAscending",
   numberOfItems: ALL_SERVICES.length,
   itemListElement: ALL_SERVICES.map((s, i) => ({
     "@type": "ListItem",
     position: i + 1,
+    url: absoluteUrl(`/services#${slugify(s.title)}`),
     item: {
       "@type": "Service",
+      "@id": absoluteUrl(`/services#${slugify(s.title)}`),
       name: s.title,
       description: s.want,
       serviceType: s.title,
-      provider: {
-        "@type": "Organization",
-        name: "DPMF Design & Development",
-      },
+      areaServed: "Worldwide",
+      provider: { "@id": absoluteUrl("/#organization") },
     },
   })),
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: absoluteUrl("/services"),
+    },
+  ],
 };
 
 export default function ServicesPage() {
   return (
     <main className="page-top">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
-      />
+      <JsonLd data={[servicesJsonLd, breadcrumbJsonLd]} />
 
       <section className="container">
         <header className="page-head">

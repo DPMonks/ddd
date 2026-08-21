@@ -19,6 +19,30 @@ body {
   padding: 0;
 }
 
+/* Accessibility: skip-to-content link, visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 50;
+  padding: 10px 16px;
+  background: var(--color-violet);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-semibold);
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: var(--color-white);
+  outline: 2px solid var(--color-white);
+}
+
+#main-content:focus {
+  outline: none;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);

@@ -4,11 +4,34 @@
   margin-top: calc(var(--baseline) * 12);
 }
 
+.top {
+  margin-bottom: calc(var(--baseline) * 3);
+}
+
+.primary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--baseline) * 4);
+}
+
+.primaryLink {
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  font-size: 0.95rem;
+  color: var(--color-white);
+}
+
+.primaryLink:hover {
+  color: var(--color-violet);
+}
+
 .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: calc(var(--baseline) * 3);
+  padding-top: calc(var(--baseline) * 3);
+  border-top: 1px solid color-mix(in srgb, var(--color-grey) 10%, transparent);
 }
 
 .copy {

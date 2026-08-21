@@ -49,6 +49,19 @@
   margin: calc(var(--baseline)) 0 0;
 }
 
+.sectionLink {
+  margin-top: calc(var(--baseline) * 2);
+  font-weight: var(--weight-semibold);
+}
+
+.sectionLink a {
+  color: var(--color-violet);
+}
+
+.sectionLink a:hover {
+  color: var(--color-white);
+}
+
 /* SECTION 5 — SECONDARY CTA */
 .cta {
   display: flex;

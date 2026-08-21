@@ -1,12 +1,50 @@
+import Link from "next/link";
 import LogoPlaceholder from "@/components/LogoPlaceholder";
 import DeltaDivider from "@/components/DeltaDivider";
 import Card from "@/components/Card";
+import JsonLd from "@/components/JsonLd";
+import { SITE_NAME, absoluteUrl } from "@/lib/site";
 
 export const metadata = {
   title: "About",
   description:
-    "DPMF Design & Development — an engineered, minimal digital design and development studio.",
+    "DPMF Design & Development is a premium, engineered digital studio — dark-tech, minimal, systems-driven design & development. Meet the studio.",
+  keywords: [
+    "digital design studio",
+    "web design agency",
+    "engineered web development",
+    "design and development studio",
+  ],
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | DPMF Design & Development",
+    description:
+      "A premium, engineered digital studio — dark-tech, minimal, systems-driven design & development.",
+    url: "/about",
+    type: "website",
+  },
+};
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: `About ${SITE_NAME}`,
+  url: absoluteUrl("/about"),
+  mainEntity: { "@id": absoluteUrl("/#organization") },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About",
+      item: absoluteUrl("/about"),
+    },
+  ],
 };
 
 const EXPERTISE = [
@@ -27,6 +65,7 @@ const EXPERTISE = [
 export default function AboutPage() {
   return (
     <main className="page-top">
+      <JsonLd data={[aboutJsonLd, breadcrumbJsonLd]} />
       <section className="container">
         <header className="page-head">
           <p className="eyebrow">About</p>
@@ -90,9 +129,20 @@ export default function AboutPage() {
               DPMF Design &amp; Development is led hands-on, pairing design taste
               with engineering rigour so the vision and the build never drift apart.
             </p>
+            <div className="actions" style={{ display: "flex", gap: "16px" }}>
+              <Link className="btn btn--ghost" href="/services">
+                Our Services
+              </Link>
+              <Link className="btn btn--primary" href="/contact">
+                Start a Project
+              </Link>
+            </div>
           </div>
           <div className="col-7">
-            <LogoPlaceholder size="medium" ariaLabel="DPMF founder brand mark placeholder" />
+            <LogoPlaceholder
+              size="medium"
+              ariaLabel="DPMF Design & Development founder brand mark placeholder — 6:1 grey rectangle with violet border"
+            />
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LogoPlaceholder from "@/components/LogoPlaceholder";
 import DeltaDivider from "@/components/DeltaDivider";
 import Card from "@/components/Card";
@@ -48,16 +49,19 @@ export default function HomePage() {
             <p className={styles.subline}>Dark-tech, minimal, engineered.</p>
 
             <div className={styles.actions}>
-              <a className="btn btn--primary" href="/services">
+              <Link className="btn btn--primary" href="/services">
                 Explore Services
-              </a>
-              <a className="btn btn--ghost" href="/contact">
+              </Link>
+              <Link className="btn btn--ghost" href="/contact">
                 Start a Project
-              </a>
+              </Link>
             </div>
 
             <div className={styles.logoWrap}>
-              <LogoPlaceholder size="large" />
+              <LogoPlaceholder
+                size="large"
+                ariaLabel="DPMF Design & Development logo placeholder — 6:1 grey rectangle with a violet border"
+              />
             </div>
           </div>
         </div>
@@ -80,6 +84,9 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className={styles.sectionLink}>
+            <Link href="/services">View all services →</Link>
+          </p>
         </div>
       </section>
 
@@ -89,6 +96,9 @@ export default function HomePage() {
           <header className={styles.sectionHead}>
             <p className="eyebrow">Selected Work</p>
             <h2>Featured Work</h2>
+            <p className={styles.sectionLink}>
+              <Link href="/portfolio">See the full portfolio →</Link>
+            </p>
           </header>
           <div className="grid">
             {WORK.map((w) => (
@@ -113,9 +123,9 @@ export default function HomePage() {
             <h2 className={styles.ctaTitle}>
               Ready to build something engineered?
             </h2>
-            <a className="btn btn--primary" href="/contact">
+            <Link className="btn btn--primary" href="/contact">
               Start a Project
-            </a>
+            </Link>
           </div>
         </div>
       </section>
