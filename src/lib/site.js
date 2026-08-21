@@ -1,9 +1,8 @@
 // Single source of truth for the site's absolute URL.
 //
-// There is no production domain yet, so this defaults to localhost. When a
-// domain is acquired, set NEXT_PUBLIC_SITE_URL (e.g. https://your-domain.com)
-// in the environment — no code changes needed. Used for metadataBase,
-// canonical URLs, sitemap.xml, and robots.txt.
+// Canonical production URL is the DPMF subdomain. Override per-environment with
+// NEXT_PUBLIC_SITE_URL (e.g. http://localhost:3000 for local dev, or a preview
+// URL). Used for metadataBase, canonical URLs, sitemap.xml, and robots.txt.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://design.dpmf.technology"
 ).replace(/\/+$/, "");
