@@ -1,0 +1,170 @@
+import Link from "next/link";
+import Card from "@/components/Card";
+import DeltaDivider from "@/components/DeltaDivider";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ThreeViewer from "@/components/ThreeViewer";
+import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
+import { SITE_NAME, absoluteUrl } from "@/lib/site";
+
+export const metadata = {
+  title: "Portfolio",
+  description:
+    "Selected engineered design & development work — brand systems, product UI and web apps. See how DPMF builds premium, minimal digital experiences.",
+  keywords: [
+    "design portfolio",
+    "web development portfolio",
+    "branding case studies",
+    "UI/UX case studies",
+    "product design work",
+  ],
+  alternates: { canonical: "/portfolio" },
+  openGraph: {
+    title: "Portfolio | DPMF Design & Development",
+    description:
+      "Selected engineered design & development work — brand systems, product UI and web apps.",
+    url: "/portfolio",
+    type: "website",
+  },
+};
+
+const PROJECTS = [
+  {
+    eyebrow: "Brand & Web",
+    title: "Meridian",
+    image: "DPMF-meridian-brand-web",
+    body: "Identity system and marketing site for a precision engineering studio.",
+  },
+  {
+    eyebrow: "Product Design",
+    title: "Halo UI",
+    image: "DPMF-halo-ui-product-design",
+    body: "End-to-end product interface for a data platform, built on an 8px baseline.",
+  },
+  {
+    eyebrow: "Branding",
+    title: "Northpoint",
+    image: "DPMF-northpoint-branding",
+    body: "Minimal dark-tech identity and documentation system for a developer tool.",
+  },
+  {
+    eyebrow: "Web App",
+    title: "Cadence",
+    image: "DPMF-cadence-web-app",
+    body: "Engineered dashboard front-end with a componentised, reusable design language.",
+  },
+];
+
+const portfolioJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `${SITE_NAME} — Selected Work`,
+  numberOfItems: PROJECTS.length,
+  itemListElement: PROJECTS.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: p.title,
+      about: p.eyebrow,
+      description: p.body,
+      creator: { "@id": absoluteUrl("/#organization") },
+    },
+  })),
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Portfolio",
+      item: absoluteUrl("/portfolio"),
+    },
+  ],
+};
+
+export default function PortfolioPage() {
+  return (
+    <main className="page-top">
+      <JsonLd data={[portfolioJsonLd, breadcrumbJsonLd]} />
+      <section className="container">
+        <header className="page-head">
+          <p className="eyebrow">Portfolio</p>
+          <h1>Selected work.</h1>
+          <p className="lead">
+            A sample of engineered, minimal digital products — each built as a
+            clean, reusable system.
+          </p>
+        </header>
+      </section>
+
+      <section className="section container">
+        <div className="grid">
+          {PROJECTS.map((p, i) => (
+            <Reveal className="col-6" delay={i * 80} key={p.title}>
+              <Card
+                eyebrow={p.eyebrow}
+                title={p.title}
+                media={
+                  <ImagePlaceholder
+                    ratio="16 / 9"
+                    eyebrow={p.eyebrow}
+                    name={p.image}
+                  />
+                }
+                action={{ label: "View Project", href: "/contact" }}
+              >
+                <p>{p.body}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <div className="container">
+        <DeltaDivider />
+      </div>
+
+      {/* 3D & Motion — interactive placeholder render */}
+      <section id="three-d" className="section container">
+        <Reveal className="grid">
+          <div className="col-5 stack">
+            <p className="eyebrow">3D &amp; Motion</p>
+            <h2>Rendered in real time.</h2>
+            <p className="text-muted">
+              An interactive placeholder for 3D &amp; motion work — drag to orbit,
+              scroll to zoom. Final client renders drop straight into this viewer.
+            </p>
+            <Link className="btn btn--ghost" href="/services#3d-motion-graphics">
+              3D &amp; Motion services
+            </Link>
+          </div>
+          <div className="col-7">
+            <ThreeViewer />
+          </div>
+        </Reveal>
+      </section>
+
+      <div className="container">
+        <DeltaDivider />
+      </div>
+
+      <section className="section container">
+        <div className="page-head">
+          <h2>Your project could be next.</h2>
+          <p className="text-muted">
+            Let&apos;s build something engineered and intentional. Explore our{" "}
+            <Link href="/services">services</Link> or start a conversation.
+          </p>
+        </div>
+        <a className="btn btn--primary" href="/contact">
+          Start a Project
+        </a>
+      </section>
+    </main>
+  );
+}

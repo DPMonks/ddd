@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--baseline) * 1.5);
+  height: 100%;
+  padding: calc(var(--baseline) * 4);
+  background: var(--color-black);
+  border: 1px solid color-mix(in srgb, var(--color-grey) 18%, transparent);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-violet);
+  transform: translateY(-3px);
+}
+
+.media {
+  width: 100%;
+  margin-bottom: calc(var(--baseline));
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-violet);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: var(--weight-bold);
+}
+
+.body {
+  color: var(--color-grey);
+  font-size: 0.98rem;
+}
+
+.body :global(p) {
+  margin: 0;
+}
+
+.action {
+  align-self: flex-start;
+  margin-top: calc(var(--baseline) * 1.5);
+}

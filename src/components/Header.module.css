@@ -1,0 +1,76 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-black);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 14%, transparent);
+  /* Promote to its own compositing layer so sticky content repaints reliably
+     during anchor jumps (mitigates a Chrome sticky repaint glitch). */
+  transform: translateZ(0);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--baseline) * 4);
+  padding-block: calc(var(--baseline) * 2);
+}
+
+.brand {
+  display: block;
+  flex: none;
+}
+
+/* Constrain the small logo placeholder inside the header bar */
+.logo {
+  width: 168px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--baseline) * 4);
+}
+
+.link {
+  position: relative;
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--color-grey);
+  transition: color var(--transition);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1.5px;
+  background: var(--color-violet);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.link:hover {
+  color: var(--color-violet);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    gap: calc(var(--baseline) * 3);
+  }
+}

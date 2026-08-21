@@ -1,0 +1,9 @@
+/* 6:1 horizontal logo placeholder — grey fill, violet border, rounded */
+.logo {
+  width: 100%;
+  aspect-ratio: 6 / 1;
+  background-color: var(--color-grey);
+  border: 2px solid var(--color-violet); /* brand spec: 2px violet */
+  border-radius: var(--radius-md); /* 12px, within the locked 8–12px range */
+  /* No text, no symbol, no icon — intentionally empty. */
+}

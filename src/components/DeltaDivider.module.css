@@ -1,0 +1,23 @@
+.divider {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--baseline) * 2);
+  color: var(--color-white);
+  transition: color var(--transition-smooth);
+}
+
+.divider:hover {
+  color: var(--color-violet);
+}
+
+.rule {
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.delta {
+  flex: none;
+  display: block;
+}
