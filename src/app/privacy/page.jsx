@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Privacy · DPMF Design & Development",
+  title: "Privacy",
   description: "Privacy policy for DPMF Design & Development.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

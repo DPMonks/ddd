@@ -25,9 +25,33 @@ const orbitron = Orbitron({
 });
 
 export const metadata = {
-  title: "DPMF Design & Development",
+  metadataBase: new URL("https://dpmf.design"),
+  title: {
+    default: "DPMF Design & Development — Premium Digital Design & Development",
+    template: "%s | DPMF Design & Development",
+  },
   description:
-    "DPMF Design & Development — dark-tech digital design service. Web design, branding, UI/UX, content and strategy.",
+    "DPMF Design & Development — a dark-tech, engineered digital design studio. Web design & development, branding, UI/UX, product design, content, and digital strategy.",
+  keywords: [
+    "digital design agency",
+    "web design",
+    "web development",
+    "branding",
+    "UI/UX design",
+    "product design",
+    "Next.js development",
+    "digital strategy",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "DPMF Design & Development",
+    title: "DPMF Design & Development",
+    description:
+      "Premium, engineered digital design & development. Dark-tech, minimal, intentional.",
+    url: "/",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }) {

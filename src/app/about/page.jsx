@@ -3,9 +3,10 @@ import DeltaDivider from "@/components/DeltaDivider";
 import Card from "@/components/Card";
 
 export const metadata = {
-  title: "About · DPMF Design & Development",
+  title: "About",
   description:
     "DPMF Design & Development — an engineered, minimal digital design and development studio.",
+  alternates: { canonical: "/about" },
 };
 
 const EXPERTISE = [

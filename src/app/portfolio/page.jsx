@@ -2,8 +2,9 @@ import Card from "@/components/Card";
 import DeltaDivider from "@/components/DeltaDivider";
 
 export const metadata = {
-  title: "Portfolio · DPMF Design & Development",
+  title: "Portfolio",
   description: "Selected engineered design and development work.",
+  alternates: { canonical: "/portfolio" },
 };
 
 const PROJECTS = [

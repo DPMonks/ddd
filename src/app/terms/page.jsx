@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Terms · DPMF Design & Development",
+  title: "Terms",
   description: "Terms of service for DPMF Design & Development.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

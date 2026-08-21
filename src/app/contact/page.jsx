@@ -2,8 +2,9 @@ import ContactForm from "@/components/ContactForm";
 import DeltaDivider from "@/components/DeltaDivider";
 
 export const metadata = {
-  title: "Contact · DPMF Design & Development",
+  title: "Contact",
   description: "Start a project with DPMF Design & Development.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
