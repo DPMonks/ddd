@@ -15,12 +15,14 @@ import styles from "./Card.module.css";
 export default function Card({
   title,
   eyebrow,
+  media,
   children,
   action,
   className = "",
 }) {
   return (
     <article className={`${styles.card} ${className}`.trim()}>
+      {media && <div className={styles.media}>{media}</div>}
       {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
       {title && <h3 className={styles.title}>{title}</h3>}
       {children && <div className={styles.body}>{children}</div>}

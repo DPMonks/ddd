@@ -1,7 +1,7 @@
 import Link from "next/link";
-import LogoPlaceholder from "@/components/LogoPlaceholder";
 import DeltaDivider from "@/components/DeltaDivider";
 import Card from "@/components/Card";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import JsonLd from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
 
@@ -139,9 +139,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="col-7">
-            <LogoPlaceholder
-              size="medium"
-              ariaLabel="DPMF Design & Development founder brand mark placeholder — 6:1 grey rectangle with violet border"
+            <ImagePlaceholder
+              ratio="3 / 2"
+              eyebrow="Studio"
+              label="Founder / studio portrait"
             />
           </div>
         </div>

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Card from "@/components/Card";
 import DeltaDivider from "@/components/DeltaDivider";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ThreeViewer from "@/components/ThreeViewer";
 import JsonLd from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
 
@@ -102,12 +104,43 @@ export default function PortfolioPage() {
               <Card
                 eyebrow={p.eyebrow}
                 title={p.title}
+                media={
+                  <ImagePlaceholder
+                    ratio="16 / 9"
+                    eyebrow={p.eyebrow}
+                    label={`${p.title} — project image`}
+                  />
+                }
                 action={{ label: "View Project", href: "/contact" }}
               >
                 <p>{p.body}</p>
               </Card>
             </div>
           ))}
+        </div>
+      </section>
+
+      <div className="container">
+        <DeltaDivider />
+      </div>
+
+      {/* 3D & Motion — interactive placeholder render */}
+      <section id="three-d" className="section container">
+        <div className="grid">
+          <div className="col-5 stack">
+            <p className="eyebrow">3D &amp; Motion</p>
+            <h2>Rendered in real time.</h2>
+            <p className="text-muted">
+              An interactive placeholder for 3D &amp; motion work — drag to orbit,
+              scroll to zoom. Final client renders drop straight into this viewer.
+            </p>
+            <Link className="btn btn--ghost" href="/services#3d-motion-graphics">
+              3D &amp; Motion services
+            </Link>
+          </div>
+          <div className="col-7">
+            <ThreeViewer />
+          </div>
         </div>
       </section>
 

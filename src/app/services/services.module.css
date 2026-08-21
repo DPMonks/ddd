@@ -173,6 +173,17 @@
   max-width: 42ch;
 }
 
+.serviceLink {
+  display: inline-block;
+  margin-top: calc(var(--baseline) * 2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-violet);
+}
+
+.serviceLink:hover {
+  color: var(--color-white);
+}
+
 .includesLabel {
   margin: 0 0 calc(var(--baseline) * 2);
   font-family: var(--font-display);

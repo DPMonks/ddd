@@ -2,6 +2,7 @@ import Link from "next/link";
 import LogoPlaceholder from "@/components/LogoPlaceholder";
 import DeltaDivider from "@/components/DeltaDivider";
 import Card from "@/components/Card";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import styles from "./page.module.css";
 
 const PILLARS = [
@@ -106,6 +107,13 @@ export default function HomePage() {
                 <Card
                   eyebrow={w.eyebrow}
                   title={w.title}
+                  media={
+                    <ImagePlaceholder
+                      ratio="16 / 9"
+                      eyebrow="16:9"
+                      label={`${w.title} — preview`}
+                    />
+                  }
                   action={{ label: "View Project", href: "/portfolio" }}
                 >
                   <p>{w.body}</p>

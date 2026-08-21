@@ -129,6 +129,7 @@ const CATEGORIES = [
         num: "09",
         title: "3D & Motion Graphics",
         want: "Depth and motion that elevate the brand.",
+        link: { href: "/portfolio#three-d", label: "View interactive 3D demo" },
         includes: [
           "3D visuals",
           "Animated graphics",
@@ -454,6 +455,11 @@ export default function ServicesPage() {
                     </div>
                     <h3 className={styles.title}>{s.title}</h3>
                     <p className={styles.want}>{s.want}</p>
+                    {s.link && (
+                      <Link className={styles.serviceLink} href={s.link.href}>
+                        {s.link.label} →
+                      </Link>
+                    )}
                   </div>
                   <div className="col-7">
                     <p className={styles.includesLabel}>Includes</p>
