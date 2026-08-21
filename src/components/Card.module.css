@@ -7,11 +7,12 @@
   background: var(--color-black);
   border: 1px solid color-mix(in srgb, var(--color-grey) 18%, transparent);
   border-radius: var(--radius-md);
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), transform var(--transition);
 }
 
 .card:hover {
   border-color: var(--color-violet);
+  transform: translateY(-3px);
 }
 
 .media {

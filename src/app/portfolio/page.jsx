@@ -3,6 +3,7 @@ import Card from "@/components/Card";
 import DeltaDivider from "@/components/DeltaDivider";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ThreeViewer from "@/components/ThreeViewer";
+import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
 
@@ -103,8 +104,8 @@ export default function PortfolioPage() {
 
       <section className="section container">
         <div className="grid">
-          {PROJECTS.map((p) => (
-            <div className="col-6" key={p.title}>
+          {PROJECTS.map((p, i) => (
+            <Reveal className="col-6" delay={i * 80} key={p.title}>
               <Card
                 eyebrow={p.eyebrow}
                 title={p.title}
@@ -119,7 +120,7 @@ export default function PortfolioPage() {
               >
                 <p>{p.body}</p>
               </Card>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -130,7 +131,7 @@ export default function PortfolioPage() {
 
       {/* 3D & Motion — interactive placeholder render */}
       <section id="three-d" className="section container">
-        <div className="grid">
+        <Reveal className="grid">
           <div className="col-5 stack">
             <p className="eyebrow">3D &amp; Motion</p>
             <h2>Rendered in real time.</h2>
@@ -145,7 +146,7 @@ export default function PortfolioPage() {
           <div className="col-7">
             <ThreeViewer />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <div className="container">

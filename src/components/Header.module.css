@@ -34,15 +34,34 @@
 }
 
 .link {
+  position: relative;
   font-family: var(--font-body);
   font-weight: var(--weight-semibold);
   font-size: 0.9rem;
   letter-spacing: 0.02em;
   color: var(--color-grey);
+  transition: color var(--transition);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1.5px;
+  background: var(--color-violet);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
 }
 
 .link:hover {
   color: var(--color-violet);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 640px) {

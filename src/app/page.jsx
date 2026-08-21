@@ -3,6 +3,7 @@ import LogoPlaceholder from "@/components/LogoPlaceholder";
 import DeltaDivider from "@/components/DeltaDivider";
 import Card from "@/components/Card";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Reveal from "@/components/Reveal";
 import styles from "./page.module.css";
 
 const PILLARS = [
@@ -79,12 +80,12 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="grid">
-            {PILLARS.map((p) => (
-              <div className="col-4" key={p.title}>
+            {PILLARS.map((p, i) => (
+              <Reveal className="col-4" delay={i * 90} key={p.title}>
                 <Card eyebrow={p.eyebrow} title={p.title}>
                   <p>{p.body}</p>
                 </Card>
-              </div>
+              </Reveal>
             ))}
           </div>
           <p className={styles.sectionLink}>
@@ -104,8 +105,8 @@ export default function HomePage() {
             </p>
           </header>
           <div className="grid">
-            {WORK.map((w) => (
-              <div className="col-6" key={w.title}>
+            {WORK.map((w, i) => (
+              <Reveal className="col-6" delay={i * 90} key={w.title}>
                 <Card
                   eyebrow={w.eyebrow}
                   title={w.title}
@@ -120,7 +121,7 @@ export default function HomePage() {
                 >
                   <p>{w.body}</p>
                 </Card>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -129,14 +130,14 @@ export default function HomePage() {
       {/* SECTION 5 — SECONDARY CTA */}
       <section className="section">
         <div className="container">
-          <div className={styles.cta}>
+          <Reveal className={styles.cta}>
             <h2 className={styles.ctaTitle}>
               Ready to build something engineered?
             </h2>
             <Link className="btn btn--primary" href="/contact">
               Start a Project
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>

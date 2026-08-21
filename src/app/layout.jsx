@@ -125,6 +125,11 @@ export default function RootLayout({ children }) {
       className={`${poppins.variable} ${montserrat.variable} ${orbitron.variable}`}
     >
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <JsonLd data={[organizationSchema, websiteSchema]} />
         <a className="skip-link" href="#main-content">
           Skip to content
