@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           </p>
           <p className="text-muted">
             To request access to or deletion of your information, contact{" "}
-            <a href="mailto:studio@dpmf.design">studio@dpmf.design</a>.
+            <a href="mailto:aarathi@dpmf.technology">aarathi@dpmf.technology</a>.
           </p>
         </div>
       </section>

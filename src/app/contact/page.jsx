@@ -36,12 +36,9 @@ export default function ContactPage() {
               <p className="text-muted">
                 Email
                 <br />
-                <a href="mailto:studio@dpmf.design">studio@dpmf.design</a>
-              </p>
-              <p className="text-muted">
-                Enquiries
-                <br />
-                <a href="mailto:new@dpmf.design">new@dpmf.design</a>
+                <a href="mailto:aarathi@dpmf.technology">
+                  aarathi@dpmf.technology
+                </a>
               </p>
             </div>
 
