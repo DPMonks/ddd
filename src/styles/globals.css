@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Ensure in-page anchor jumps clear the sticky header */
+  scroll-padding-top: 104px;
+}
+
 html,
 body {
   margin: 0;

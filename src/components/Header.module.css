@@ -1,10 +1,12 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: color-mix(in srgb, var(--color-black) 82%, transparent);
-  backdrop-filter: blur(8px);
+  z-index: 20;
+  background: var(--color-black);
   border-bottom: 1px solid color-mix(in srgb, var(--color-grey) 14%, transparent);
+  /* Promote to its own compositing layer so sticky content repaints reliably
+     during anchor jumps (mitigates a Chrome sticky repaint glitch). */
+  transform: translateZ(0);
 }
 
 .inner {
