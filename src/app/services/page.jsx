@@ -288,6 +288,56 @@ const CATEGORIES = [
 
 const ALL_SERVICES = CATEGORIES.flatMap((c) => c.services);
 
+// Popularity ranking (most popular first). Used to surface a "Most Popular"
+// quick-access strip and to badge top services within the categories.
+const POPULARITY = [
+  "Website Design & Development",
+  "Branding & Identity Systems",
+  "UI/UX Design",
+  "Content Creation & Structured Documentation",
+  "Digital Strategy & Consultation",
+  "Design Systems & Component Libraries",
+  "Motion & Interaction Design",
+  "SEO-Ready Structure & Performance Optimisation",
+  "Multi-Language Website Architecture",
+  "Analytics & Behaviour Tracking",
+  "Custom Web Applications",
+  "Automation & Workflow Tools",
+  "Product Design (Digital)",
+  "Visual Systems & Marketing Assets",
+  "Accessibility & Compliance",
+  "3D & Motion Graphics",
+  "Illustration Systems",
+  "Iconography Sets",
+  "Design Audits",
+  "Conversion Optimisation",
+];
+
+// Number of top-ranked services treated as "Most Popular".
+const POPULAR_COUNT = 6;
+
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+const rankOf = (title) => {
+  const index = POPULARITY.indexOf(title);
+  return index === -1 ? Number.MAX_SAFE_INTEGER : index + 1;
+};
+
+const isPopular = (title) => rankOf(title) <= POPULAR_COUNT;
+
+// Top services in popularity order, with anchor slugs, for the quick-access strip.
+const MOST_POPULAR = ALL_SERVICES.map((s) => ({
+  title: s.title,
+  slug: slugify(s.title),
+  rank: rankOf(s.title),
+}))
+  .filter((s) => s.rank <= POPULAR_COUNT)
+  .sort((a, b) => a.rank - b.rank);
+
 // Service structured data (JSON-LD) to help search engines index the offering.
 const servicesJsonLd = {
   "@context": "https://schema.org",
@@ -329,6 +379,23 @@ export default function ServicesPage() {
           </p>
         </header>
 
+        {/* Most Popular quick-access strip (ranked, deep-linked) */}
+        <section className={styles.popular} aria-label="Most popular services">
+          <span className={styles.navLabel}>Most popular</span>
+          <ol className={styles.popularList}>
+            {MOST_POPULAR.map((s) => (
+              <li key={s.slug}>
+                <Link href={`#${s.slug}`} className={styles.popularLink}>
+                  <span className={styles.popularRank}>
+                    {String(s.rank).padStart(2, "0")}
+                  </span>
+                  {s.title}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         {/* Browse-by-category nav with anchor deep-links */}
         <nav className={styles.nav} aria-label="Browse services by category">
           <span className={styles.navLabel}>Browse</span>
@@ -360,10 +427,19 @@ export default function ServicesPage() {
 
           <div className={styles.list}>
             {category.services.map((s) => (
-              <article className={styles.service} key={s.num}>
+              <article
+                className={styles.service}
+                id={slugify(s.title)}
+                key={s.num}
+              >
                 <div className="grid">
                   <div className="col-5">
-                    <p className={`eyebrow ${styles.num}`}>{s.num}</p>
+                    <div className={styles.serviceMeta}>
+                      <span className={`eyebrow ${styles.num}`}>{s.num}</span>
+                      {isPopular(s.title) && (
+                        <span className={styles.badge}>Popular</span>
+                      )}
+                    </div>
                     <h3 className={styles.title}>{s.title}</h3>
                     <p className={styles.want}>{s.want}</p>
                   </div>
