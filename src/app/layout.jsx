@@ -2,6 +2,7 @@ import { Poppins, Montserrat, Orbitron } from "next/font/google";
 import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://dpmf.design"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "DPMF Design & Development — Premium Digital Design & Development",
     template: "%s | DPMF Design & Development",

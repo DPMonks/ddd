@@ -1,4 +1,4 @@
-const BASE_URL = "https://dpmf.design";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots() {
   return {
@@ -6,6 +6,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

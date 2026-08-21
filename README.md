@@ -54,6 +54,14 @@ npm run dev     # start the dev server → http://localhost:3000
 - **`Header`** — logo placeholder + primary navigation, dark-tech styling.
 - **`DeltaDivider`** — hollow white Δ section divider.
 
+## Configuration
+
+- `NEXT_PUBLIC_SITE_URL` — the site's absolute base URL, used for
+  `metadataBase`, canonical tags, `sitemap.xml`, and `robots.txt`. There is no
+  production domain yet, so it defaults to `http://localhost:3000`
+  ([`src/lib/site.js`](src/lib/site.js)). Set this once a domain is acquired —
+  no code changes required.
+
 ## Cloud Agent environment
 
 Configured in [`.cursor/environment.json`](.cursor/environment.json): `npm ci`
