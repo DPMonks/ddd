@@ -31,21 +31,25 @@ const PROJECTS = [
   {
     eyebrow: "Brand & Web",
     title: "Meridian",
+    image: "DPMF-meridian-brand-web",
     body: "Identity system and marketing site for a precision engineering studio.",
   },
   {
     eyebrow: "Product Design",
     title: "Halo UI",
+    image: "DPMF-halo-ui-product-design",
     body: "End-to-end product interface for a data platform, built on an 8px baseline.",
   },
   {
     eyebrow: "Branding",
     title: "Northpoint",
+    image: "DPMF-northpoint-branding",
     body: "Minimal dark-tech identity and documentation system for a developer tool.",
   },
   {
     eyebrow: "Web App",
     title: "Cadence",
+    image: "DPMF-cadence-web-app",
     body: "Engineered dashboard front-end with a componentised, reusable design language.",
   },
 ];
@@ -108,7 +112,7 @@ export default function PortfolioPage() {
                   <ImagePlaceholder
                     ratio="16 / 9"
                     eyebrow={p.eyebrow}
-                    label={`${p.title} — project image`}
+                    name={p.image}
                   />
                 }
                 action={{ label: "View Project", href: "/contact" }}

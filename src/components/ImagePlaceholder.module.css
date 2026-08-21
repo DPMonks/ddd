@@ -54,3 +54,12 @@
   font-size: 0.82rem;
   color: color-mix(in srgb, var(--color-grey) 80%, transparent);
 }
+
+.fileName {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  color: color-mix(in srgb, var(--color-grey) 85%, transparent);
+  word-break: break-all;
+  max-width: 90%;
+}

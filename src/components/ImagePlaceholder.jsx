@@ -6,22 +6,32 @@ import styles from "./ImagePlaceholder.module.css";
  *
  * Props:
  *  - ratio:  aspect ratio, e.g. "16 / 9" (default), "4 / 3", "1 / 1", "4 / 5"
- *  - label:  short caption shown under the icon (e.g. "Project image")
+ *  - name:   asset base name using the DPMF-<what-it-is> convention
+ *            (e.g. "DPMF-meridian-brand-web"). Shown as the slot's filename and
+ *            used for the accessible label. Drop the matching file into
+ *            /public/images/ named "<name>.webp" (or .jpg/.png) to replace it.
+ *  - ext:    expected file extension for the real asset (default "webp")
+ *  - label:  fallback caption when no name is given
  *  - eyebrow: tiny uppercase kicker (e.g. "16:9")
  *  - className
  */
 export default function ImagePlaceholder({
   ratio = "16 / 9",
+  name,
+  ext = "webp",
   label = "Image placeholder",
   eyebrow,
   className = "",
 }) {
+  const fileName = name ? `${name}.${ext}` : null;
+
   return (
     <div
       className={`${styles.frame} ${className}`.trim()}
       style={{ aspectRatio: ratio }}
       role="img"
-      aria-label={label}
+      aria-label={name ? name.replace(/-/g, " ") : label}
+      data-filename={fileName || undefined}
     >
       <div className={styles.inner}>
         <svg
@@ -42,7 +52,11 @@ export default function ImagePlaceholder({
           <path d="M6 39 15 30l6 5" />
         </svg>
         {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
-        <span className={styles.label}>{label}</span>
+        {fileName ? (
+          <span className={styles.fileName}>{fileName}</span>
+        ) : (
+          <span className={styles.label}>{label}</span>
+        )}
       </div>
     </div>
   );

@@ -27,11 +27,13 @@ const WORK = [
   {
     eyebrow: "Case Study",
     title: "Meridian — Brand & Web",
+    image: "DPMF-meridian-brand-web",
     body: "A dark-tech identity system and marketing site for a precision engineering studio.",
   },
   {
     eyebrow: "Case Study",
     title: "Halo UI — Product Design",
+    image: "DPMF-halo-ui-product-design",
     body: "An end-to-end product interface designed on an 8px baseline for a data platform.",
   },
 ];
@@ -111,7 +113,7 @@ export default function HomePage() {
                     <ImagePlaceholder
                       ratio="16 / 9"
                       eyebrow="16:9"
-                      label={`${w.title} — preview`}
+                      name={w.image}
                     />
                   }
                   action={{ label: "View Project", href: "/portfolio" }}

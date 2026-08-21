@@ -142,7 +142,7 @@ export default function AboutPage() {
             <ImagePlaceholder
               ratio="3 / 2"
               eyebrow="Studio"
-              label="Founder / studio portrait"
+              name="DPMF-founder-studio-portrait"
             />
           </div>
         </div>
